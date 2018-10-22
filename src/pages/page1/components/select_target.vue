@@ -14,7 +14,7 @@ export default {
   data () {
     return {
       model: {
-        img: require('../../assets/images/dashboard.png'),
+        img: require('../../../assets/images/dashboard.png'),
         left: 1257,
         top: 88
       }
@@ -29,6 +29,6 @@ export default {
   .page {
     width: 3328px;
     height: 1024px;
-    background: url(../../assets/images/baseBg.jpg) center no-repeat;
+    background: url(../../../assets/images/baseBg.jpg) center no-repeat;
   }
 </style>
