@@ -15,8 +15,8 @@ export default {
     return {
       model: {
         img: require('../../../assets/images/dashboard.png'),
-        left: 1257,
-        top: 88
+        left: 1272,
+        top: 106
       }
     }
   },

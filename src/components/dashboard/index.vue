@@ -1,5 +1,9 @@
 <template>
-  <div ref="outer" style="background: rgba(0,0,0,.1)" v-if="width > 0">
+  <div ref="outer" v-if="width > 0">
+    <div class="cont_box">
+      <div class="text">西藏自治区商务诚信指数</div>
+      <div class="number">{{action * 10}}</div>
+    </div>
   </div>
 </template>
 
@@ -74,7 +78,7 @@ export default {
       grad.addColorStop(1, "rgb(24, 76, 133)");
       while (index !== arrLength) {
         ctx.beginPath();
-        ctx.strokeStyle = index <= action ? "#ffe04e" : grad;
+        ctx.strokeStyle = index <= action ? "#ffe04e" : "#2c5bad";
         let qidian = start + index / arrLength * 2 * Math.PI;
         let zhongdian = start + (index + 0.02) / arrLength * 2 * Math.PI;
         ctx.arc(width / 2, width / 2, radio - 50, qidian, zhongdian);
@@ -82,7 +86,7 @@ export default {
         let x = width / 2 - radio * Math.sin(qidian - 0.5 * Math.PI);
         let y = width / 2 + radio * Math.cos(qidian - 0.5 * Math.PI) + 8;
 
-        ctx.fillStyle = index <= action ? "#ffe04e" : "#fff";
+        ctx.fillStyle = index <= action ? "#ffe04e" : "#17cbff";
         ctx.stroke();
         ctx.fillText(index + "0", x, y);
         index++;
@@ -91,9 +95,9 @@ export default {
     drowImg(ctx) {
       var _ = this,image1 = new Image();
       image1.onload = function() {
-        if(shuzi1 < 30 * (12 + _.action )){
+        if(shuzi1 < 30 * (12 + _.action ) || true){
           timer1 = window.setTimeout(() => {
-            console.log(shuzi1)
+            // console.log(shuzi1)
             shuzi1 = parseInt(shuzi1) + 3;
             _.drowImg(ctx);
           }, 20)
@@ -118,5 +122,20 @@ export default {
 <style scoped>
 .model {
   position: absolute;
+}
+.cont_box{
+  position: absolute;
+  left: 254px;
+  top: 300px;
+  width: 280px;
+  text-align: center;
+}
+.text{
+  color: #21c8f8;
+  font-size: 24px;
+}
+.number{
+  color: #2172f8;
+  font-size: 140px;
 }
 </style>
